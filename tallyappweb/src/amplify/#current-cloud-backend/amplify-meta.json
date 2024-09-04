@@ -1,0 +1,437 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ballframealpha-tallyapp-c9f7b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::078918894010:role/amplify-ballframealpha-tallyapp-c9f7b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::078918894010:role/amplify-ballframealpha-tallyapp-c9f7b-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ballframealpha-tallyapp-c9f7b-deployment",
+      "UnauthRoleName": "amplify-ballframealpha-tallyapp-c9f7b-unauthRole",
+      "StackName": "amplify-ballframealpha-tallyapp-c9f7b",
+      "StackId": "arn:aws:cloudformation:us-east-1:078918894010:stack/amplify-ballframealpha-tallyapp-c9f7b/6e8b7490-326a-11ef-b56a-129a9e92f7ad",
+      "AmplifyAppId": "d3bd1t6zi2ma9t"
+    }
+  },
+  "api": {
+    "ballframealpha": {
+      "service": "AppSync",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2025-06-26T22:05:43.857Z",
+              "apiKeyExpirationDays": 365,
+              "description": ""
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "n2qp3inv4vba7bioxtiqo7iih4",
+        "GraphQLAPIEndpointOutput": "https://jfabgpikwbe3xayu4ge6xxkl6q.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ythmsnwbv5eqrfrf6jkotylneu"
+      },
+      "providerPlugin": "awscloudformation",
+      "lastPushTimeStamp": "2024-09-04T20:30:19.219Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ballframealpha-tallyapp-c9f7b-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiballframealpha"
+      },
+      "lastPushDirHash": "s8FtYW9OkhNitOgXLQf2z2ICh1g=",
+      "testMode": true
+    },
+    "tallyrestapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "tallysportpassmanager",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ballframealpha-tallyapp-c9f7b-deployment/amplify-cfn-templates/api/tallyrestapi-cloudformation-template.json",
+        "logicalId": "apitallyrestapi"
+      },
+      "lastPushTimeStamp": "2024-09-04T20:30:18.186Z",
+      "output": {
+        "ApiName": "tallyrestapi",
+        "RootUrl": "https://ggufxi55nk.execute-api.us-east-1.amazonaws.com/tallyapp",
+        "ApiId": "ggufxi55nk"
+      },
+      "lastPushDirHash": "TUuIVCJIxUa1y6ETdjdcxK6f8ig="
+    }
+  },
+  "auth": {
+    "ballframealpha7735216b": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "output": {
+        "UserPoolId": "us-east-1_Ati22oNQB",
+        "UserPoolName": "tallyappalpha2cf6ef62_userpool_2cf6ef62-dev",
+        "AppClientID": "rtdnpmsgidtdti1smbpehrlst",
+        "AppClientIDWeb": "kfcbuforpq6e1aicfmdsov7ku",
+        "IdentityPoolId": "us-east-1:1ce8173a-907a-468d-8689-0e3f7834be2e",
+        "IdentityPoolName": "tallyappalpha2cf6ef62_identitypool_2cf6ef62__dev"
+      },
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "lastPushTimeStamp": "2024-08-26T13:58:56.383Z"
+    }
+  },
+  "storage": {
+    "AdminUserm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "AdminUser-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/AdminUser-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/AdminUser-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:20.715",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "CurrentSportsSeasonm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "CurrentSportsSeason-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/CurrentSportsSeason-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/CurrentSportsSeason-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-10-05T19:55:58.896",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "GameMediam6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "GameMedia-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/GameMedia-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/GameMedia-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-06-12T20:52:03.052",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Gamem6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "Game-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Game-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Game-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.160",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Leaguem6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "League-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/League-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/League-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-05-03T16:20:16.706",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Mediam6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "Media-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Media-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Media-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-06-12T20:52:03.450",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "PlayerStatsm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "PlayerStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/PlayerStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/PlayerStats-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.301",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Playerm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "Player-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Player-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Player-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.195",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Schoolm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "School-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/School-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/School-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.199",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "SeasonOfPlaym6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "SeasonOfPlay-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/SeasonOfPlay-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/SeasonOfPlay-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.342",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Sportm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "Sport-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Sport-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Sport-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.478",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Statsm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "Stats-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Stats-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Stats-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:19.281",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "TeamLevelm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "TeamLevel-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamLevel-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamLevel-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:16.896",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "TeamPlayersm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "TeamPlayers-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamPlayers-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamPlayers-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:18.090",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "TeamStatsm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "TeamStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamStats-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:18.325",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Teamm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "Team-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Team-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Team-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:18.499",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "UIProfilem6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "UIProfile-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/UIProfile-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/UIProfile-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-10-05T19:45:38.732",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "Userm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "User-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/User-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/User-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.626",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "UsersFavsTeamm6sittuzmfccrjdffbo5eui5n4dev": {
+      "service": "DynamoDB",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "Name": "UsersFavsTeam-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:078918894010:table/UsersFavsTeam-m6sittuzmfccrjdffbo5eui5n4-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/UsersFavsTeam-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-10-05T19:45:39.916",
+        "PartitionKeyName": "id",
+        "PartitionKeyType": "S"
+      },
+      "lastPushTimeStamp": "2024-06-26T18:56:59.202Z"
+    },
+    "s381d6905f": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2024-09-04T20:30:18.188Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ballframealpha-tallyapp-c9f7b-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages381d6905f"
+      },
+      "output": {
+        "BucketName": "ballframealphab34cb077e01743d2b7b0a5041650cb9fc9f7b-tallyapp",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "G8r6oln2eqPOidunzS8z/RwyUc8="
+    }
+  },
+  "function": {
+    "tallysportpassmanager": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-09-04T20:26:30.253Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-09-04T20:26:31.310Z",
+      "distZipFilename": "tallysportpassmanager-5a2f594675436865417a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-ballframealpha-tallyapp-c9f7b-deployment",
+        "s3Key": "amplify-builds/tallysportpassmanager-5a2f594675436865417a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ballframealpha-tallyapp-c9f7b-deployment/amplify-cfn-templates/function/tallysportpassmanager-cloudformation-template.json",
+        "logicalId": "functiontallysportpassmanager"
+      },
+      "lastPushTimeStamp": "2024-09-04T20:30:19.219Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::078918894010:role/ballframealphaLambdaRolee0a53cb7-tallyapp",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:078918894010:function:tallysportpassmanager-tallyapp",
+        "Name": "tallysportpassmanager-tallyapp",
+        "LambdaExecutionRole": "ballframealphaLambdaRolee0a53cb7-tallyapp"
+      },
+      "lastPushDirHash": "MeNu1UJicZJxG5EndaklHPay4Wg=",
+      "lastDevBuildTimeStamp": "2024-08-15T19:07:41.901Z"
+    }
+  }
+}
