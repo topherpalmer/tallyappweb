@@ -1,0 +1,190 @@
+{
+  "tallyapp": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ballframealpha-tallyapp-c9f7b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::078918894010:role/amplify-ballframealpha-tallyapp-c9f7b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::078918894010:role/amplify-ballframealpha-tallyapp-c9f7b-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ballframealpha-tallyapp-c9f7b-deployment",
+      "UnauthRoleName": "amplify-ballframealpha-tallyapp-c9f7b-unauthRole",
+      "StackName": "amplify-ballframealpha-tallyapp-c9f7b",
+      "StackId": "arn:aws:cloudformation:us-east-1:078918894010:stack/amplify-ballframealpha-tallyapp-c9f7b/6e8b7490-326a-11ef-b56a-129a9e92f7ad",
+      "AmplifyAppId": "d3bd1t6zi2ma9t"
+    },
+    "categories": {
+      "auth": {
+        "ballframealpha7735216b": {
+          "userPoolId": "us-east-1_Ati22oNQB",
+          "userPoolName": "tallyappalpha2cf6ef62_userpool_2cf6ef62-dev",
+          "webClientId": "kfcbuforpq6e1aicfmdsov7ku",
+          "nativeClientId": "rtdnpmsgidtdti1smbpehrlst",
+          "identityPoolId": "us-east-1:1ce8173a-907a-468d-8689-0e3f7834be2e",
+          "identityPoolName": "tallyappalpha2cf6ef62_identitypool_2cf6ef62__dev",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::078918894010:role/amplify-tallyappalpha-dev-112801-authRole",
+          "authRoleName": "amplify-tallyappalpha-dev-112801-authRole",
+          "unauthRoleArn": "arn:aws:iam::078918894010:role/amplify-tallyappalpha-dev-112801-unauthRole",
+          "unauthRoleName": "amplify-tallyappalpha-dev-112801-unauthRole"
+        }
+      },
+      "function": {
+        "tallysportpassmanager": {}
+      },
+      "storage": {
+        "AdminUserm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "AdminUser-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/AdminUser-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/AdminUser-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:20.715",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "CurrentSportsSeasonm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "CurrentSportsSeason-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/CurrentSportsSeason-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/CurrentSportsSeason-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-10-05T19:55:58.896",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "GameMediam6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "GameMedia-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/GameMedia-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/GameMedia-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-06-12T20:52:03.052",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Gamem6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "Game-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Game-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Game-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.160",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Leaguem6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "League-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/League-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/League-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-05-03T16:20:16.706",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Mediam6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "Media-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Media-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Media-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-06-12T20:52:03.450",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "PlayerStatsm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "PlayerStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/PlayerStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/PlayerStats-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.301",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Playerm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "Player-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Player-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Player-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.195",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Schoolm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "School-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/School-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/School-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.199",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "SeasonOfPlaym6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "SeasonOfPlay-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/SeasonOfPlay-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/SeasonOfPlay-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.342",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Sportm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "Sport-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Sport-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Sport-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.478",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Statsm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "Stats-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Stats-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Stats-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:19.281",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "TeamLevelm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "TeamLevel-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamLevel-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamLevel-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:16.896",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "TeamPlayersm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "TeamPlayers-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamPlayers-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamPlayers-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:18.090",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "TeamStatsm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "TeamStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamStats-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/TeamStats-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:18.325",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Teamm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "Team-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/Team-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/Team-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:18.499",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "UIProfilem6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "UIProfile-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/UIProfile-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/UIProfile-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-10-05T19:45:38.732",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "Userm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "User-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/User-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/User-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-02-23T17:54:17.626",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "UsersFavsTeamm6sittuzmfccrjdffbo5eui5n4dev": {
+          "tableName": "UsersFavsTeam-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:078918894010:table/UsersFavsTeam-m6sittuzmfccrjdffbo5eui5n4-dev",
+          "streamArn": "arn:aws:dynamodb:us-east-1:078918894010:table/UsersFavsTeam-m6sittuzmfccrjdffbo5eui5n4-dev/stream/2023-10-05T19:45:39.916",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "s381d6905f": {}
+      }
+    }
+  }
+}

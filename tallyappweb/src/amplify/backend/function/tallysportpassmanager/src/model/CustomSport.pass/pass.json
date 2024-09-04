@@ -1,0 +1,29 @@
+{
+  "formatVersion" : 1,
+	"teamIdentifier":"6B99KNN2MD",
+	"passTypeIdentifier":"pass.com.undefeatedsoftware.tallyapp.sma",
+  "locations" : [
+
+  ],
+  "barcode" : {
+    "message" : "",
+    "format" : "PKBarcodeFormatQR",
+    "messageEncoding" : "iso-8859-1"
+  },
+  "organizationName" : "organizationName",
+  "description" : "description",
+  "logoText" : "logoText",
+  "foregroundColor" : "rgb(0, 0, 0)",
+  "backgroundColor" : "rgb(48, 8, 57)",
+  "generic" : {
+    "primaryFields" : [
+
+    ],
+    "secondaryFields" : [
+
+    ],
+    "auxiliaryFields" : [
+      
+    ]
+  }
+}
