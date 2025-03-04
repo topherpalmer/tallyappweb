@@ -6,7 +6,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 module.exports = {
   entry: './client/src/main.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist/public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     clean: true,
     publicPath: '/'
