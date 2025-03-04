@@ -28,12 +28,32 @@ amplify configure
 amplify pull --appId YOUR_APP_ID --envName YOUR_ENV_NAME
 ```
 
-7. Start the development server:
-```bash
-npm run dev
-```
+7. For development, you have two options:
 
-The application will be available at `http://localhost:5000`.
+   a. Using Webpack Dev Server (Recommended for development):
+   ```bash
+   # Start Webpack Dev Server
+   npx webpack serve --config webpack.dev.js
+
+   # In a separate terminal, start the Express server
+   npx tsx server/index.ts
+   ```
+
+   b. Using the combined dev script (Uses Vite for faster rebuilds):
+   ```bash
+   npm run dev
+   ```
+
+8. For production builds:
+   ```bash
+   # Build the client
+   npx webpack --config webpack.prod.js
+
+   # Build the server
+   npm run build
+   ```
+
+The development server will be available at `http://localhost:5000` (or next available port).
 
 ## Project Structure
 
@@ -45,14 +65,18 @@ The application will be available at `http://localhost:5000`.
 - `shared/` - Shared types and schemas
 - `migrations/` - Database migrations
 
-## Features
+## Build Configuration
 
-- School management
-- Team management
-- Sports organization
-- League administration
-- User authentication via AWS Cognito
-- Data persistence with AWS AppSync
+The project uses Webpack for bundling with the following configuration files:
+- `webpack.common.js` - Shared configuration
+- `webpack.dev.js` - Development-specific settings
+- `webpack.prod.js` - Production build settings
+
+The configurations include:
+- TypeScript and React support via Babel
+- CSS processing with PostCSS and Tailwind
+- Environment variable handling with dotenv-webpack
+- Hot Module Replacement in development
 
 ## AWS Configuration
 

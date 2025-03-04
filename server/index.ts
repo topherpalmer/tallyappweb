@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import path from "path";
+import { log } from "./logger";
 
 const app = express();
 app.use(express.json());
@@ -47,13 +48,16 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
+  // In production, serve static files from the dist/public directory
+  if (process.env.NODE_ENV === 'production') {
+    const distPath = path.resolve(__dirname, 'public');
+    app.use(express.static(distPath));
+    app.get('*', (_req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
   }
 
-  // Try ports starting from 5000
+  // Try ports starting from 5001 for the API server
   const tryPort = async (port: number, maxAttempts: number = 10): Promise<number> => {
     for (let i = 0; i < maxAttempts; i++) {
       try {
@@ -82,8 +86,8 @@ app.use((req, res, next) => {
   };
 
   try {
-    const port = await tryPort(5000);
-    log(`serving on port ${port}`);
+    const port = await tryPort(5001); // Start from 5001 for API server
+    log(`API server running on port ${port}`);
   } catch (err) {
     console.error('Failed to start server:', err);
     process.exit(1);
