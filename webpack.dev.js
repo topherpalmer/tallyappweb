@@ -10,7 +10,12 @@ module.exports = merge(common, {
     historyApiFallback: true,
     hot: true,
     proxy: {
-      '/api': 'http://localhost:5001'
+      '/api': {
+        target: 'http://localhost:5001',
+        pathRewrite: { '^/api': '/api' },
+        secure: false,
+        changeOrigin: true
+      }
     }
   }
 });

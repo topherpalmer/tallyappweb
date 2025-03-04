@@ -48,7 +48,7 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // In production, serve static files from the dist/public directory
+  // In development, don't serve static files - let Webpack handle that
   if (process.env.NODE_ENV === 'production') {
     const distPath = path.resolve(__dirname, 'public');
     app.use(express.static(distPath));
