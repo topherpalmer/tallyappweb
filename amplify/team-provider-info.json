@@ -1,0 +1,20 @@
+{
+  "tallyapp": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ballframealpha-tallyapp-c9f7b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::078918894010:role/amplify-ballframealpha-tallyapp-c9f7b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::078918894010:role/amplify-ballframealpha-tallyapp-c9f7b-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ballframealpha-tallyapp-c9f7b-deployment",
+      "UnauthRoleName": "amplify-ballframealpha-tallyapp-c9f7b-unauthRole",
+      "StackName": "amplify-ballframealpha-tallyapp-c9f7b",
+      "StackId": "arn:aws:cloudformation:us-east-1:078918894010:stack/amplify-ballframealpha-tallyapp-c9f7b/6e8b7490-326a-11ef-b56a-129a9e92f7ad",
+      "AmplifyAppId": "d3bd1t6zi2ma9t"
+    },
+    "categories": {
+      "auth": {
+        "ballframealpha15530b2f": {}
+      }
+    }
+  }
+}

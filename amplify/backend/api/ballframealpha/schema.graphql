@@ -1,0 +1,210 @@
+type AdminUser @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String
+  lastName: String
+  email: String
+  nickName: String
+  subId: String
+  invitedByUserId: String
+  type: String
+  teamId: ID! @index(name: "byAdminUserForTeam")
+  gameId: ID! @index(name: "byAdminUserForGame")
+
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String
+  lastName: String
+  email: String
+  nickName: String
+  subId: String
+  favoriteTeams: [Team] @manyToMany(relationName: "UsersFavsTeam")
+}
+
+type Stats @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  points: Int
+  rebounds: Int
+  assists: Int
+  fouls: Int
+  shotsTaken: Int
+  threePointersTaken: Int
+  threePointersMade: Int
+  gameId: ID!
+  players: [Player] @manyToMany(relationName: "PlayerStats")
+  type: String
+  teamId: ID
+  status: String
+}
+
+type Game @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  date: AWSDateTime
+  location: String
+  visitorTeamId: ID
+  homeTeamId: ID
+  status: String
+  visitingTeamStatsId: ID
+  homeTeamStatsId: ID
+  visitingTeamStats: TeamStats @hasOne(fields: ["visitingTeamStatsId"])
+  homeTeamStats: TeamStats @hasOne(fields: ["homeTeamStatsId"])
+  scoreKeepers: [AdminUser] @hasMany(indexName: "byAdminUserForGame", fields: ["id"])
+  media: [Media] @manyToMany(relationName: "GameMedia")
+
+}
+type TeamLevel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  levelName: String
+  levelDisplayName: String
+  sortOrder: Int
+  year: String
+
+}
+
+type TeamStats @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  gameId: ID!
+  points: Int!
+  rebounds: Int
+  assists: Int
+  fouls: Int
+  shotsTaken: Int
+  threePointersTaken: Int
+  threePointersMade: Int
+  type: String
+  teamId: ID
+  timeouts: Int
+  status: String
+}
+
+type Player @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String
+  lastName: String
+  height: String
+  yearInSchool: String
+  position: String
+  number: String
+  stats: [Stats] @manyToMany(relationName: "PlayerStats")
+  teams: [Team] @manyToMany(relationName: "TeamPlayers")
+}
+
+type Team @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  mascotName: String
+  wins: Int
+  losses: Int
+  players: [Player] @manyToMany(relationName: "TeamPlayers")
+  createUserID: String
+  record: String
+  seasonOfPlay: SeasonOfPlay @hasOne
+  teamSportId: ID!
+  sport: Sport @hasOne(fields: ["teamSportId"])
+  schoolID: ID! @index(name: "bySchool")
+  category: String
+  level: String
+  teamLevelId: ID
+  levelOfTeam: TeamLevel @hasOne(fields: ["teamLevelId"])
+  coachesName: String
+  managers: [AdminUser] @hasMany(indexName: "byAdminUserForTeam", fields: ["id"])
+  coachesID: ID
+  displayName: String
+  leagueId: ID
+  districtId: ID
+  conferenceId: ID
+  league: League @hasOne(fields: ["leagueId"])
+  media: [Media] @hasMany(indexName: "byMedia", fields: ["id"])
+  images: [TallyImage] @hasMany(indexName: "byTallyImage", fields: ["id"])
+  usersThatFavorited: [User] @manyToMany(relationName: "UsersFavsTeam")
+  district: District @hasOne(fields: ["districtId"])
+  conference: Conference @hasOne(fields: ["conferenceId"])
+}
+
+type TallyImage @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  url: String
+  name: String
+  formFactor: String
+  teamId: ID! @index(name: "byTallyImage")
+}
+
+type SeasonOfPlay @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  year: Int
+}
+
+type Sport @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  seasonOfYear: String
+  displayName: String
+  status: String
+  sortOrder: Int
+  year: String
+
+}
+
+type School @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  address: String
+  city: String
+  zipcode: Int
+  state: String
+  mascot: String
+  imageUrl: String
+  schoolCodes: [String]
+  teams: [Team] @hasMany(indexName: "bySchool", fields: ["id"])
+  uiProfileId:ID
+  uiProfile: UIProfile @hasOne(fields: ["uiProfileId"])
+}
+
+type UIProfile @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  baseColor: String!
+  secondaryColor: String!
+  tertiaryColor: String
+  primaryImage: String
+  secondaryImage: String
+  shopifyStatus:String
+  shopifyURL:String
+  shopifyToken:String
+  teams: [Team] @hasMany(indexName: "bySchool", fields: ["id"])
+}
+
+
+type League @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  seasonOfYear: String
+}
+
+type Conference @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  seasonOfYear: String
+}
+
+type District @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  seasonOfYear: String
+}
+
+type Media @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  url: String
+  timesPlayed: Int
+  teamId: ID! @index(name: "byMedia")
+  game: [Game] @manyToMany(relationName: "GameMedia")
+
+}
+
+type CurrentSportsSeason @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  year: String
+  seasonName: String
+
+}

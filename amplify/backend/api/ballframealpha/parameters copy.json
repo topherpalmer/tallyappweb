@@ -1,0 +1,20 @@
+{
+  "AppSyncApiName": "ballframealpha",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-06-26T22:05:54.741Z",
+  "cors": {
+    "allowHeaders": [
+      "Content-Type",
+      "Authorization"
+    ],
+    "allowMethods": [
+      "GET",
+      "POST",
+      "OPTIONS"
+    ],
+    "allowOrigins": [
+      "https://undefeatedsoftware.retool.com"
+    ]
+  }
+}
